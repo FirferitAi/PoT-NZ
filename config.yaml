@@ -1,0 +1,37 @@
+# Конфигурация эксперимента: теория шага с пропуском нуля
+seed: 42
+device: auto          # auto | cuda | cpu
+out_dir: runs
+
+data:
+  path: data/tinyshakespeare.txt
+  url: https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
+  val_fraction: 0.1
+  block_size: 128     # длина контекста для батча
+
+model:
+  d_model: 128
+  n_heads: 4
+  n_layers: 4
+  d_ff: 512
+  context: 128
+  dropout: 0.1
+
+# Квантователь (план, раздел 4 + теория, разделы 1-4, 11)
+quant:
+  n: 1.0              # полудиапазон сетки
+  p: 4                # шаг = n / 2^p = 1/16, значений = 2^(p+1) = 32 (без нуля)
+  skip_zero: true     # true -> теория (нет нуля), false -> сетка с нулём (B)
+  scale_mode: per_block   # global | per_block (теория, разд. 11: масштаб на блок)
+  block_size: 32      # весов в блоке; накладные 16 бит / 32 = 0.5 бита на вес
+
+train:
+  batch_size: 64
+  lr: 3.0e-4
+  min_lr_ratio: 0.1
+  warmup_frac: 0.05
+  grad_clip: 1.0
+  weight_decay: 0.01
+  epochs: 30
+  log_interval_steps: 20
+  diag_interval_steps: 100

@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Checkpoints and logs (weights are shipped as .bin, not .pt)
+*.pt
+*.pth
+*.log
+runs/**/ckpt_*.pt
+runs/**/*_log.txt
+runs/**/eval_log.txt
+
+# Bulky intermediate artifacts: kept locally, not published
+runs/**/weights_packed.bin
+!runs/C_p4_skipzero/weights_packed.bin
+runs/**/weights_sparse*.bin
+runs/**/deploy_codes.npz
+runs_medium/**/weights_packed.bin
+!runs_medium/C_p4E_medium/weights_packed.bin
+runs_medium/**/deploy_codes.npz
+runs_medium_reg/**
+runs_l1/**/weights_packed.bin
+runs_l1/**/weights_sparse*.bin
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Standalone release snapshot (kept locally, the repository itself is the release)
+pot-nz-release/
+
+# Process logs (stdout of training jobs)
+*_log.txt
+log*.txt
+
+# Raw hand-written reports are superseded by reports/ (kept locally)
+runs/report_*.md
+# Root copy of the theory duplicates theory/ТЕОРИЯ PoT-NZ.txt (kept locally)
+/ТЕОРИЯ PoT-NZ.txt
+
+experiment_log*.txt
+
+# Per-run tokenizer copies duplicate data/bpe16k/tokenizer.json (keep the released one)
+runs*/**/bpe_tokenizer.json
+!runs_medium/C_p4E_medium/bpe_tokenizer.json

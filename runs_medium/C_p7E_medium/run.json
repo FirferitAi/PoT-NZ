@@ -1,0 +1,60 @@
+{
+  "tag": "C_p7E_medium",
+  "variant": "C",
+  "device": "cuda",
+  "torch": "2.6.0+cu124",
+  "seed": 42,
+  "params_total": 7288320,
+  "params_quant": 7241728,
+  "quant": {
+    "n": 1.0,
+    "p": 7,
+    "skip_zero": true,
+    "scale_mode": "per_block",
+    "block_size": 32
+  },
+  "model": {
+    "vocab_size": 16000,
+    "d_model": 256,
+    "n_heads": 8,
+    "n_layers": 4,
+    "d_ff": 1024,
+    "context": 128,
+    "dropout": 0.1,
+    "tie_embeddings": true,
+    "quantize_embedding": true,
+    "quant": null
+  },
+  "train": {
+    "batch_size": 32,
+    "lr": 0.0003,
+    "min_lr_ratio": 0.1,
+    "warmup_frac": 0.05,
+    "grad_clip": 1.0,
+    "weight_decay": 0.01,
+    "epochs": 60,
+    "log_interval_steps": 20,
+    "diag_interval_steps": 100
+  },
+  "data": {
+    "path": "data/tinyshakespeare.txt",
+    "tokenizer": {
+      "kind": "bpe",
+      "vocab_size": 16000
+    },
+    "chars": 305035,
+    "train": 271316,
+    "val": 33719,
+    "vocab": 16000
+  },
+  "steps_per_epoch": 66,
+  "total_steps": 3960,
+  "best": {
+    "val_loss": 5.485134750264679,
+    "step": 1320,
+    "epoch": 20
+  },
+  "final_val_loss": 5.9962259209201365,
+  "final_val_ppl": 401.90909086579074,
+  "elapsed_s": 240.6
+}

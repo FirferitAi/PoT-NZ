@@ -1,0 +1,20 @@
+{
+  "run": "A_fp32",
+  "variant": "A",
+  "checkpoint_epoch": 30,
+  "val_loss": 2.0813303489225192,
+  "val_ppl": 8.015124737301571,
+  "params_total": 826368,
+  "params_quant": 0,
+  "size_theory": {
+    "mode": "fp32",
+    "weights": 826368,
+    "bits_per_weight": 32.0,
+    "bytes_theory": 3305472,
+    "scale_overhead_bits": 0.0
+  },
+  "size_uint8_file": {
+    "bytes_file": 3305472,
+    "packed": false
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "bpe": {
+    "vocab": 16000,
+    "tokens_total": 305035,
+    "chars_per_token": 3.6566098972249086,
+    "val_tokens": 33719,
+    "val_tokens_unseen": 1765,
+    "val_unseen_frac": 0.05234437557460186,
+    "train_tokens": 271316,
+    "occurrences_per_vocab": 16.95725
+  },
+  "runs": [
+    {
+      "run": "A_fp32_medium",
+      "params": 7288320,
+      "params_quant": 0,
+      "fp32_share": 1.0,
+      "best_val_ppl": {
+        "val_loss": 5.556165519322732,
+        "step": 528,
+        "epoch": 8
+      },
+      "packed": {
+        "path": "runs_medium\\A_fp32_medium\\weights_packed.bin",
+        "bytes_file": 29158189,
+        "header_bytes": 4901,
+        "codes_bytes": 0,
+        "scales_bytes": 0,
+        "fp32_bytes": 29153280,
+        "scale_dtype": "float16",
+        "bits_per_code": null,
+        "quant_weights": null,
+        "params_total": 7288320,
+        "layers": 53,
+        "compression_vs_fp32": 0.9998316424932975
+      },
+      "size": {
+        "mode": "fp32",
+        "weights": 7288320,
+        "bits_per_weight": 32.0,
+        "bytes_theory": 29153280,
+        "scale_overhead_bits": 0.0
+      }
+    },
+    {
+      "run": "C_p4_medium",
+      "params": 7288320,
+      "params_quant": 3145728,
+      "fp32_share": 0.5683877766069547,
+      "best_val_ppl": {
+        "val_loss": 5.540566480658353,
+        "step": 1716,
+        "epoch": 26
+      },
+      "packed": {
+        "path": "runs_medium\\C_p4_medium\\weights_packed.bin",
+        "bytes_file": 18739941,
+        "header_bytes": 6877,
+        "codes_bytes": 1966080,
+        "scales_bytes": 196608,
+        "fp32_bytes": 16570368,
+        "scale_dtype": "float16",
+        "bits_per_code": 5,
+        "quant_weights": 3145728,
+        "params_total": 7288320,
+        "layers": 53,
+        "compression_vs_fp32": 1.5556761891619617
+      },
+      "size": {
+        "mode": "skip_zero",
+        "weights": 7288320,
+        "quant_weights": 3145728,
+        "bits_per_weight": 5.0,
+        "scale_overhead_bits": 0.5,
+        "bytes_theory": 18733056.0,
+        "bytes_fp32_same_model": 29153280,
+        "compression_vs_fp32": 1.5562479501475894
+      }
+    },
+    {
+      "run": "C_p5_medium",
+      "params": 7288320,
+      "params_quant": 3145728,
+      "fp32_share": 0.5683877766069547,
+      "best_val_ppl": {
+        "val_loss": 5.527915978159741,
+        "step": 1320,
+        "epoch": 20
+      },
+      "packed": {
+        "path": "runs_medium\\C_p5_medium\\weights_packed.bin",
+        "bytes_file": 19133158,
+        "header_bytes": 6878,
+        "codes_bytes": 2359296,
+        "scales_bytes": 196608,
+        "fp32_bytes": 16570368,
+        "scale_dtype": "float16",
+        "bits_per_code": 6,
+        "quant_weights": 3145728,
+        "params_total": 7288320,
+        "layers": 53,
+        "compression_vs_fp32": 1.5237045552020216
+      },
+      "size": {
+        "mode": "skip_zero",
+        "weights": 7288320,
+        "quant_weights": 3145728,
+        "bits_per_weight": 6.0,
+        "scale_overhead_bits": 0.5,
+        "bytes_theory": 19126272.0,
+        "bytes_fp32_same_model": 29153280,
+        "compression_vs_fp32": 1.5242531320269836
+      }
+    }
+  ],
+  "all_quantized_bytes": 5010720.0
+}

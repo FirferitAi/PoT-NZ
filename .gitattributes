@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+# Binary payloads: never normalise line endings
+*.png  binary
+*.bin  binary
+*.npz  binary
+*.pt   binary
+*.pth  binary
+*.csv  text eol=lf

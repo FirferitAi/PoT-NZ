@@ -1,0 +1,14 @@
+experiments:
+  - name: B_p4_l1_1e5
+    variant: B
+    quant: {p: 4, skip_zero: false}
+    train: {l1_lambda: 1.0e-5}
+  - name: B_p4_l1_5e5
+    variant: B
+    quant: {p: 4, skip_zero: false}
+    train: {l1_lambda: 5.0e-5}
+  - name: A_fp32_init2
+    variant: A
+  - name: C_p4_init2
+    variant: C
+    quant: {p: 4, skip_zero: true}

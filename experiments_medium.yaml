@@ -1,0 +1,9 @@
+experiments:
+  - name: A_fp32_medium
+    variant: A
+  - name: C_p4_medium
+    variant: C
+    quant: {p: 4, skip_zero: true}
+  - name: C_p5_medium
+    variant: C
+    quant: {p: 5, skip_zero: true}

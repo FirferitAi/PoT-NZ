@@ -1,0 +1,38 @@
+# L1-эксперимент: маленькая char-модель, вариант B (с нулём), p=7
+seed: 42
+device: auto          # auto | cuda | cpu
+out_dir: runs_l1
+
+data:
+  path: data/tinyshakespeare.txt
+  url: https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
+  val_fraction: 0.1
+  block_size: 128     # длина контекста для батча
+
+model:
+  d_model: 128
+  n_heads: 4
+  n_layers: 4
+  d_ff: 512
+  context: 128
+  dropout: 0.1
+
+# Квантователь (план, раздел 4 + теория, разделы 1-4, 11)
+quant:
+  n: 1.0              # полудиапазон сетки
+  p: 7                # 8-битная сетка: 2^8 = 256 значений (быстро, качество ~fp32)
+  skip_zero: false    # вариант B: сетка С нулём (для L1-разреженности)
+  scale_mode: per_block   # global | per_block (теория, разд. 11: масштаб на блок)
+  block_size: 32      # весов в блоке; накладные 16 бит / 32 = 0.5 бита на вес
+
+train:
+  batch_size: 64
+  lr: 3.0e-4
+  min_lr_ratio: 0.1
+  warmup_frac: 0.05
+  grad_clip: 1.0
+  weight_decay: 0.01
+  epochs: 60
+  log_interval_steps: 20
+  diag_interval_steps: 100
+  l1_lambda: 0.0        # L1-регуляризация на квантуемые веса (0 = выключена)

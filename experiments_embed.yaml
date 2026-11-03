@@ -1,0 +1,14 @@
+experiments:
+  - name: A_fp32_medium
+    variant: A
+  - name: C_p7_medium
+    variant: C
+    quant: {p: 7, skip_zero: true}
+  - name: C_p7E_medium
+    variant: C
+    quant: {p: 7, skip_zero: true}
+    model: {quantize_embedding: true}
+  - name: C_p4E_medium
+    variant: C
+    quant: {p: 4, skip_zero: true}
+    model: {quantize_embedding: true}

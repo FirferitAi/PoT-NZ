@@ -1,0 +1,28 @@
+{
+  "source_run": "runs/A_fp32_e60",
+  "baseline_fp32_ppl": 6.051736423733304,
+  "int8": {
+    "block": {
+      "layers": 16,
+      "val_ppl": 6.0520982320102075,
+      "ratio_vs_fp32": 1.0000597858617049,
+      "bits_per_weight": 8.5,
+      "bytes_file": 995328,
+      "compression_vs_fp32": 3.3209876543209877
+    },
+    "tensor": {
+      "layers": 16,
+      "val_ppl": 6.05500232194109,
+      "ratio_vs_fp32": 1.0005396629957277,
+      "bits_per_weight": 8.000040690104166,
+      "bytes_file": 946180,
+      "compression_vs_fp32": 3.4934917246189943
+    }
+  },
+  "skip_zero_p7": {
+    "val_ppl": 5.956815964931775,
+    "bits_per_weight": 8.5,
+    "bytes_file": 1002098,
+    "compression_vs_fp32": 3.298551638662087
+  }
+}

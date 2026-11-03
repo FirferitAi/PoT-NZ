@@ -1,0 +1,71 @@
+{
+  "run": "C_p2_skipzero",
+  "variant": "C",
+  "checkpoint_epoch": 30,
+  "val_loss": 2.0524910440674877,
+  "val_ppl": 7.787275411379711,
+  "params_total": 826368,
+  "params_quant": 786432,
+  "quant": {
+    "p": 2,
+    "n": 1.0,
+    "skip_zero": true,
+    "scale_mode": "per_block",
+    "block_size": 32,
+    "step": 0.25,
+    "levels": 8
+  },
+  "stats": {
+    "weights": 786432,
+    "on_grid_frac": 1.0,
+    "zero_frac": 0.0,
+    "satur_frac": 0.05507787068684896,
+    "max_abs_norm": 1.0,
+    "mean_abs_k": 1.597368876139323,
+    "k_hist": [
+      21637,
+      40357,
+      89423,
+      241468,
+      0,
+      242165,
+      89700,
+      40004,
+      21678
+    ],
+    "grad_norm": NaN
+  },
+  "hist_plot": true,
+  "deploy": {
+    "file": "runs/C_p2_skipzero\\deploy_codes.npz",
+    "bytes_file": 396419
+  },
+  "packed": {
+    "path": "runs/C_p2_skipzero\\weights_packed.bin",
+    "bytes_file": 510569,
+    "header_bytes": 6753,
+    "codes_bytes": 294912,
+    "scales_bytes": 49152,
+    "fp32_bytes": 159744,
+    "scale_dtype": "float16",
+    "bits_per_code": 3,
+    "quant_weights": 786432,
+    "params_total": 826368,
+    "layers": 53,
+    "bytes_file_fp32_scales": 559721
+  },
+  "size_theory": {
+    "mode": "skip_zero",
+    "weights": 826368,
+    "quant_weights": 786432,
+    "bits_per_weight": 3.0,
+    "scale_overhead_bits": 0.5,
+    "bytes_theory": 503808.0,
+    "bytes_fp32_same_model": 3305472,
+    "compression_vs_fp32": 6.560975609756097
+  },
+  "size_uint8_file": {
+    "bytes_file": 995328,
+    "packed": false
+  }
+}

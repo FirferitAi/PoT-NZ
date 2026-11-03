@@ -1,0 +1,9 @@
+# Зависимости (Python 3.10+)
+# CUDA-сборка ставится из индекса PyTorch:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+# Для CPU: --index-url https://download.pytorch.org/whl/cpu
+torch>=2.4
+numpy>=2.0
+PyYAML>=6.0
+matplotlib>=3.9
+tokenizers>=0.20   # BPE для средней модели

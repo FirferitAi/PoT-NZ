@@ -1,0 +1,65 @@
+{
+  "run": "B_p4_zero",
+  "p": 4,
+  "zero_frac": 0.05825169881184896,
+  "dense_bytes": 805512,
+  "sparse_bytes": 777623,
+  "sparse_gain": 1.0358644227344098,
+  "exact_layers_fp32scale": "16/16",
+  "ppl_from_sparse": 7.930688614033816,
+  "ppl_original": 7.93070246850705,
+  "break_even": {
+    "плотный B (6 бит на код)": 0.0,
+    "плотный C (5 бит на код)": 0.19999999999999996
+  },
+  "table": [
+    {
+      "zero_frac": 0.0,
+      "sparse": 638976,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    },
+    {
+      "zero_frac": 0.02,
+      "sparse": 629146,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    },
+    {
+      "zero_frac": 0.0583,
+      "sparse": 610321,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    },
+    {
+      "zero_frac": 0.1,
+      "sparse": 589825,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    },
+    {
+      "zero_frac": 0.15,
+      "sparse": 565248,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    },
+    {
+      "zero_frac": 0.2,
+      "sparse": 540673,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    },
+    {
+      "zero_frac": 0.3,
+      "sparse": 491520,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    },
+    {
+      "zero_frac": 0.4,
+      "sparse": 442368,
+      "dense_b6": 638976,
+      "dense_c5": 540672
+    }
+  ]
+}

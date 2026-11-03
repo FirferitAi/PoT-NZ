@@ -1,0 +1,44 @@
+# Средняя модель с сильной регуляризацией (dropout 0.2, weight decay 0.1):
+# 7M параметров на 271k токенов переобучаются, этот конфиг показывает сравнение
+# A/C в незапоминающем режиме
+seed: 42
+device: auto
+out_dir: runs_medium_reg
+
+data:
+  path: data/tinyshakespeare.txt
+  url: https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
+  val_fraction: 0.1
+  block_size: 128      # токенов BPE на батч
+  tokenizer:
+    type: bpe
+    vocab_size: 16000
+    file: data/bpe16k/tokenizer.json
+
+model:
+  d_model: 256
+  n_heads: 8
+  n_layers: 4
+  d_ff: 1024
+  context: 128
+  dropout: 0.2
+  tie_embeddings: true   # lm_head делит тензор с эмбеддингом -> ~7M, а не ~11M
+
+# Квантователь (теория шага с пропуском нуля)
+quant:
+  n: 1.0
+  p: 4
+  skip_zero: true
+  scale_mode: per_block
+  block_size: 32
+
+train:
+  batch_size: 32
+  lr: 3.0e-4
+  min_lr_ratio: 0.1
+  warmup_frac: 0.05
+  grad_clip: 1.0
+  weight_decay: 0.1
+  epochs: 60
+  log_interval_steps: 20
+  diag_interval_steps: 100

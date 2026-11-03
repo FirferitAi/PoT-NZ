@@ -1,0 +1,9 @@
+experiments:
+  - name: B_p4_l1_2e5
+    variant: B
+    quant: {p: 4, skip_zero: false}
+    train: {l1_lambda: 2.0e-5}
+  - name: B_p4_l1_3e5
+    variant: B
+    quant: {p: 4, skip_zero: false}
+    train: {l1_lambda: 3.0e-5}

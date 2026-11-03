@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code or the method, please cite it as below."
+title: "PoT-NZ: Power-of-Two Quantization without Zero"
+version: 1.0.0
+date-released: 2026-11-03
+license: MIT
+repository-code: "https://github.com/FiferitAi/pot-nz"
+url: "https://github.com/FiferitAi/pot-nz"
+keywords:
+  - quantization
+  - quantization-aware-training
+  - qat
+  - power-of-two
+  - zero-free quantization
+  - model compression
+  - language-model
+abstract: >-
+  PoT-NZ is a quantization-aware training method that uses a uniform grid
+  of the form k*n/2^p with the level zero excluded from the grid. The step
+  is a power of two, so every representable weight is an exact binary
+  fraction, and the grid has exactly 2^(p+1) levels, which makes a code take
+  exactly p+1 bits with no dead code and no zero-point. We evaluate the
+  method on a small character-level Transformer and on a ~7.3M parameter
+  BPE-16k Transformer, compare it against fp32 and int8, and report
+  bit-width scaling (p = 2..8), a bit-packing format (SZP1) and a
+  zero-mask format (SZM1) for sparse grids.
+authors:
+  - name: "FiferitAi"

@@ -1,0 +1,72 @@
+{
+  "name": "C_p3_skipzero",
+  "variant": "C",
+  "val_loss": 2.0801997636407443,
+  "val_ppl": 8.006068075870749,
+  "params_total": 826368,
+  "epochs": 30,
+  "quant": {
+    "p": 3,
+    "n": 1.0,
+    "skip_zero": true,
+    "scale_mode": "per_block",
+    "levels": 16
+  },
+  "bits_carve": null,
+  "stats": {
+    "on_grid_frac": 1.0,
+    "zero_frac": 0.0,
+    "rel_err": 0.11352227917843545,
+    "satur_frac": 0.041623433430989586,
+    "mean_abs_k": 2.8744494120279946,
+    "k_hist": [
+      16537,
+      12210,
+      19757,
+      30294,
+      43972,
+      60462,
+      75822,
+      133648,
+      0,
+      133922,
+      76791,
+      60239,
+      44254,
+      30589,
+      19709,
+      12029,
+      16197
+    ],
+    "max_abs_norm": 1.0
+  },
+  "size": {
+    "mode": "skip_zero",
+    "weights": 826368,
+    "quant_weights": 786432,
+    "bits_per_weight": 4.0,
+    "scale_overhead_bits": 0.5,
+    "bytes_theory": 602112.0,
+    "bytes_fp32_same_model": 3305472,
+    "compression_vs_fp32": 5.489795918367347
+  },
+  "size_uint8": {
+    "bytes_file": 995328,
+    "packed": false
+  },
+  "packed": {
+    "path": "runs\\C_p3_skipzero\\weights_packed.bin",
+    "bytes_file": 608924,
+    "header_bytes": 6804,
+    "codes_bytes": 393216,
+    "scales_bytes": 49152,
+    "fp32_bytes": 159744,
+    "scale_dtype": "float16",
+    "bits_per_code": 4,
+    "quant_weights": 786432,
+    "params_total": 826368,
+    "layers": 53,
+    "bytes_file_fp32_scales": 658076,
+    "compression_vs_fp32": 5.4283818670310255
+  }
+}

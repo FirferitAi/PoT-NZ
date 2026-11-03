@@ -1,0 +1,34 @@
+{
+  "name": "A_fp32_medium",
+  "variant": "A",
+  "val_loss": 5.556165519322732,
+  "val_ppl": 258.8284583574862,
+  "params_total": 7288320,
+  "epochs": 60,
+  "size": {
+    "mode": "fp32",
+    "weights": 7288320,
+    "bits_per_weight": 32.0,
+    "bytes_theory": 29153280,
+    "scale_overhead_bits": 0.0
+  },
+  "size_uint8": {
+    "bytes_file": 29153280,
+    "packed": false
+  },
+  "packed": {
+    "path": "runs_medium\\A_fp32_medium\\weights_packed.bin",
+    "bytes_file": 29158216,
+    "header_bytes": 4928,
+    "codes_bytes": 0,
+    "scales_bytes": 0,
+    "fp32_bytes": 29153280,
+    "scale_dtype": "float16",
+    "bits_per_code": null,
+    "quant_weights": null,
+    "params_total": 7288320,
+    "layers": 53,
+    "bytes_file_fp32_scales": 29158216,
+    "compression_vs_fp32": 0.9998307166666164
+  }
+}

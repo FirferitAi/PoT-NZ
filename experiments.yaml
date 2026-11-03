@@ -1,0 +1,44 @@
+experiments:
+  - name: A_fp32
+    variant: A
+  - name: B_p4_zero
+    variant: B
+    quant: {p: 4, skip_zero: false}
+  - name: C_p4_skipzero
+    variant: C
+    quant: {p: 4, skip_zero: true}
+  - name: C_p3_skipzero
+    variant: C
+    quant: {p: 3, skip_zero: true}
+  - name: C_p5_skipzero
+    variant: C
+    quant: {p: 5, skip_zero: true}
+  - name: C_p4_global
+    variant: C
+    quant: {p: 4, skip_zero: true, scale_mode: global, n: 1.0}
+  - name: C_p2_skipzero
+    variant: C
+    quant: {p: 2, skip_zero: true}
+  - name: A_fp32_e60
+    variant: A
+    train: {epochs: 60}
+  - name: C_p4_skipzero_e60
+    variant: C
+    quant: {p: 4, skip_zero: true}
+    train: {epochs: 60}
+  - name: C_p5_skipzero_e60
+    variant: C
+    quant: {p: 5, skip_zero: true}
+    train: {epochs: 60}
+  - name: C_p6_skipzero_e60
+    variant: C
+    quant: {p: 6, skip_zero: true}
+    train: {epochs: 60}
+  - name: C_p7_skipzero_e60
+    variant: C
+    quant: {p: 7, skip_zero: true}
+    train: {epochs: 60}
+  - name: C_p8_skipzero_e60
+    variant: C
+    quant: {p: 8, skip_zero: true}
+    train: {epochs: 60}

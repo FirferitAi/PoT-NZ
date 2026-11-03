@@ -1,0 +1,48 @@
+{
+  "tag": "A_fp32",
+  "variant": "A",
+  "device": "cuda",
+  "torch": "2.6.0+cu124",
+  "seed": 42,
+  "params_total": 826368,
+  "params_quant": 0,
+  "quant": null,
+  "model": {
+    "vocab_size": 65,
+    "d_model": 128,
+    "n_heads": 4,
+    "n_layers": 4,
+    "d_ff": 512,
+    "context": 128,
+    "dropout": 0.1,
+    "quant": null
+  },
+  "train": {
+    "batch_size": 64,
+    "lr": 0.0003,
+    "min_lr_ratio": 0.1,
+    "warmup_frac": 0.05,
+    "grad_clip": 1.0,
+    "weight_decay": 0.01,
+    "epochs": 30,
+    "log_interval_steps": 20,
+    "diag_interval_steps": 100
+  },
+  "data": {
+    "path": "data/tinyshakespeare.txt",
+    "chars": 1115394,
+    "train": 1003855,
+    "val": 111539,
+    "vocab": 65
+  },
+  "steps_per_epoch": 122,
+  "total_steps": 3660,
+  "best": {
+    "val_loss": 2.0813303489225192,
+    "step": 3660,
+    "epoch": 30
+  },
+  "final_val_loss": 2.0813303489225192,
+  "final_val_ppl": 8.015124737301571,
+  "elapsed_s": 71.0
+}
